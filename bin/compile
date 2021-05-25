@@ -17,3 +17,7 @@ indent() {
 echo "-----> Installing Imagick"
 
 source "$BUILDPACK_DIR/lib/webp_functions.sh"
+source "$BUILDPACK_DIR/lib/jpeg_functions.sh"
+
+install_webp
+install_jpeg
