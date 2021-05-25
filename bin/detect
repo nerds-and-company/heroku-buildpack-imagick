@@ -1,9 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# this pack is valid for apps with a hello.txt in the root
-if [ -f $1/hello.txt ]; then
-  echo "HelloFramework"
-  exit 0
-else
-  exit 1
-fi
+# This pack is for every app valid
+echo "Imagick"
+exit 0
