@@ -49,4 +49,10 @@ function install_png() {
   mkdir -p $(dirname $PNG_PROFILE_PATH)
   echo "export PATH=$PNG_RUNTIME_INSTALL_PATH/bin:\$PATH" >> $PNG_PROFILE_PATH
   echo "export LD_LIBRARY_PATH=$PNG_RUNTIME_INSTALL_PATH/lib:\$LD_LIBRARY_PATH" >> $PNG_PROFILE_PATH
+
+  echo "-----> Exporting runtime environment"
+  export PATH=$PNG_INSTALL_DIR/bin:$PATH
+  export LD_LIBRARY_PATH=$PNG_INSTALL_DIR/lib:$LD_LIBRARY_PATH
+  export PKG_CONFIG_PATH=$PNG_INSTALL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
+  export CPPFLAGS="-I$PNG_INSTALL_DIR/include $CPPFLAGS"
 }

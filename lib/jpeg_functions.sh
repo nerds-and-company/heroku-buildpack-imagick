@@ -35,4 +35,10 @@ function install_jpeg() {
   mkdir -p $(dirname $JPEG_PROFILE_PATH)
   echo "export PATH=$JPEG_RUNTIME_INSTALL_PATH/bin:\$PATH" >> $JPEG_PROFILE_PATH
   echo "export LD_LIBRARY_PATH=$JPEG_RUNTIME_INSTALL_PATH/lib:\$LD_LIBRARY_PATH" >> $JPEG_PROFILE_PATH
+
+  echo "-----> Exporting runtime environment"
+  export PATH=$JPEG_INSTALL_DIR/bin:$PATH
+  export LD_LIBRARY_PATH=$JPEG_INSTALL_DIR/lib:$LD_LIBRARY_PATH
+  export PKG_CONFIG_PATH=$JPEG_INSTALL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
+  export CPPFLAGS="-I$JPEG_INSTALL_DIR/include $CPPFLAGS"
 }

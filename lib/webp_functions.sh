@@ -36,4 +36,10 @@ function install_webp() {
   mkdir -p $(dirname $LIBWEBP_PROFILE_PATH)
   echo "export PATH=$LIBWEBP_RUNTIME_INSTALL_PATH/bin:\$PATH" >> $LIBWEBP_PROFILE_PATH
   echo "export LD_LIBRARY_PATH=$LIBWEBP_RUNTIME_INSTALL_PATH/lib:\$LD_LIBRARY_PATH" >> $LIBWEBP_PROFILE_PATH
+
+  echo "-----> Exporting runtime environment"
+  export PATH=$LIBWEBP_INSTALL_DIR/bin:$PATH
+  export LD_LIBRARY_PATH=$LIBWEBP_INSTALL_DIR/lib:$LD_LIBRARY_PATH
+  export PKG_CONFIG_PATH=$LIBWEBP_INSTALL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
+  export CPPFLAGS="-I$LIBWEBP_INSTALL_DIR/include $CPPFLAGS"
 }

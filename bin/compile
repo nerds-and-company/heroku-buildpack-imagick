@@ -19,7 +19,9 @@ echo "-----> Installing Imagick"
 source "$BUILDPACK_DIR/lib/webp_functions.sh"
 source "$BUILDPACK_DIR/lib/jpeg_functions.sh"
 source "$BUILDPACK_DIR/lib/png_functions.sh"
+source "$BUILDPACK_DIR/lib/image_magick_functions.sh"
 
 install_webp
 install_jpeg
 install_png
+install_image_magick
