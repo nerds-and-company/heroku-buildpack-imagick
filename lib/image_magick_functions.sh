@@ -3,7 +3,7 @@ function install_image_magick() {
   IMAGE_MAGICK_INSTALL_DIR="$VENDOR_DIR/image_magick"
   IMAGE_MAGICK_PROFILE_PATH="$BUILD_DIR/.profile.d/image_magick.sh"
   IMAGE_MAGICK_RUNTIME_INSTALL_PATH="$HOME/vendor/image_magick"
-  IMAGE_MAGICK_VERSION=`wget -q -O - https://www.imagemagick.org/download/releases/ | sed 's/^.*href="ImageMagick-\([^"]\+\)\.tar\.gz".*/\1/p;d' | tail -n "${1:-1}" | head -n 1`
+  IMAGE_MAGICK_VERSION=`wget -q -O - https://www.imagemagick.org/download/releases/ | sed 's/^.*href="ImageMagick-\(6\.[^"]\+\)\.tar\.gz".*/\1/p;d' | tail -n "${1:-1}" | head -n 1`
 
   mkdir -p $IMAGE_MAGICK_INSTALL_DIR
 
